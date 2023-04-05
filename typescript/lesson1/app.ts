@@ -32,39 +32,99 @@
 // // Partial - дає можливість частково заповнювати інтерфес юзера
 // const user3: Partial<IUser<number>> = {name:'egor', age:4}
 
+
 // class User {
-//     protected id: number;
-//     public name: string;
-//     private age: number
-//     // для створення constructor комбінація клавіш - control+enter
-//     constructor(id: number,  name: string,  age: number) {
+// // для створення constructor комбінація клавіш - control+enter
+//     constructor(protected id: number, private name: string, private age: number) {
 //         this.id = id;
 //         this.name = name;
 //         this.age = age;
 //     }
 //
-//     getName(){
+//     getName() {
 //         return this.name
 //     }
 // }
 //
+// const user = new User(15, 'Max', 15);
 //
-// const user = new User (22, 'oleg', 23);
 // console.log(user.getName());
+//
+// // Iмплементація інтерфейсу до скласу - ^+enter
+//
+// interface IShapeActions {
+//     area: () => number;
+//     perimeter: () => number
+// }
+//
+// interface IGreeting {
+//     print: () => void
+// }
+//
+// class Rectangle implements IShapeActions, IGreeting {
+//     constructor(private a: number, private b: number) {
+//     }
+//
+//     print(): void {
+//         console.log('hello');
+//     }
+//
+//     area(): number {
+//         return this.a + this.b;
+//     }
+//
+//     perimeter(): number {
+//         return (this.a + this.b) * 2;
+//     }
+// }
+//
+// class Triangle implements IShapeActions {
+//     constructor(private a: number, private b: number, private c: number) {
+//     }
+//
+//     area(): number {
+//         return this.a * this.b / this.c;
+//     }
+//
+//     perimeter(): number {
+//         return this.a + this.b + this.c;
+//     }
+// }
+//
+// const shapes: IShapeActions[] = [
+//     new Triangle(2, 4, 6),
+//     new Rectangle(4, 1),
+//     new Triangle(1, 3, 4)
+// ]
+//
+// for (const shape of shapes) {
+//     console.log(shape.area());
+//     console.log(shape.perimeter());
+// }
 
-class User {
+// import {UserService} from "./services/user.service";
+//
+// UserService.getAll().then(value => value.data).then(users => {
+//     for (const user of users) {
+//         console.log(user.name);
+//     }
+// } )
 
-    constructor(protected id: number, private name: string, private age: number) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
 
-    getName() {
-        return this.name
-    }
+// Можна присвоїти власні значення константам enum
+enum DaysOfWeek {
+    Monday = 1,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday,
 }
 
-const user = new User(15, 'Max', 15);
-
-console.log(user.getName());
+// Значення констант може бути будь-якого типу, а не тільки числовим. Наприклад:
+enum Colors {
+    Red = 'red',
+    Green = 'green',
+    Blue = 'blue',
+}
