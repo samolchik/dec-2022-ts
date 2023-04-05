@@ -36,36 +36,36 @@
 // }
 
 interface ICores {
-    "flight": number;
-    "core": {
-        "reuse_count": number;
-        "status": string
+    flight: number;
+    core: {
+        reuse_count: number;
+        status: string
     }
 }
 
 interface IPayloads {
-    "payload_type": string;
-    "payload_mass_kg": number;
-    "payload_mass_lbs": number
+    payload_type: string;
+    payload_mass_kg: number;
+    payload_mass_lbs: number
 }
 
 export interface ILaunchInterface {
-    "mission_name": string;
-    "launch_date_local": string;
-    "launch_site": {
-        "site_name_long": string
+    mission_name: string;
+    launch_date_local: string;
+    launch_site: {
+        site_name_long: string
     },
-    "links": {
-        "article_link": string;
-        "video_link": string
+    links: {
+        article_link: string;
+        video_link: string
     },
-    "rocket": {
-        "rocket_name": string;
-        "first_stage": {
-            "cores": ICores[];
+    rocket: {
+        rocket_name: string;
+        first_stage: {
+            cores: ICores[];
         },
-        "second_stage": {
-            "payloads":IPayloads[];
+        second_stage: {
+            payloads:IPayloads[];
         }
     }
 }
